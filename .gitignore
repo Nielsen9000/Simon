@@ -1,0 +1,6 @@
+.tmp/
+.env
+credentials.json
+token.json
+*.png.bak
+.claude/

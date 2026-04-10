@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BarrierLab — Dermatologically Advanced Skincare</title>
+  <meta name="description" content="Science-backed skincare formulas for sensitive and reactive skin. Fragrance-free. Dermatologist tested. Clinically proven results." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    Get 15% off your first order — use code <span>WELCOME15</span>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo nav-logo-text">BarrierLab</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="products.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button onclick="showPopup()" style="background:var(--navy);color:white;border:none;padding:8px 14px;border-radius:100px;font-size:0.78rem;font-weight:600;cursor:pointer;margin-right:8px;">15% Off</button>
+        <button class="cart-btn" aria-label="Open cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          Cart
+          <span class="cart-count">0</span>
+        </button>
+        <button class="nav-hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile">
+      <a href="index.html">Home</a>
+      <a href="products.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="aurora-wrap"><div class="aurora-layer"></div></div>
+    <div class="container hero-inner">
+      <div class="hero-content fade-up">
+        <p class="hero-label">Dermatologically Advanced Skincare</p>
+        <h1>Your skin barrier,<br><em>restored.</em></h1>
+        <p class="hero-sub">Science-backed formulas for sensitive and reactive skin. No fragrance. No harsh actives. Just results.</p>
+        <div class="hero-cta">
+          <a href="products.html" class="btn btn-primary btn-lg">Shop All Products</a>
+          <a href="about.html" class="hero-text-link">Our Science <span>&rarr;</span></a>
+        </div>
+        <div class="hero-badges">
+          <span class="badge-subtle">Fragrance-Free</span>
+          <span class="badge-subtle">&middot;</span>
+          <span class="badge-subtle">Dermatologist Tested</span>
+          <span class="badge-subtle">&middot;</span>
+          <span class="badge-subtle">Clinically Proven</span>
+        </div>
+      </div>
+      <div class="hero-image-wrap fade-up delay-2" style="-webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 82%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 20%, black 82%, transparent 100%);">
+        <img src="images/hero_product.png" alt="BarrierLab products" class="hero-product-img" loading="eager" decoding="async" />
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST MARQUEE -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>FRAGRANCE-FREE</span><span class="marquee-dot">&middot;</span>
+        <span>DERMATOLOGIST TESTED</span><span class="marquee-dot">&middot;</span>
+        <span>ALCOHOL-FREE</span><span class="marquee-dot">&middot;</span>
+        <span>7-DAY RESULTS</span><span class="marquee-dot">&middot;</span>
+        <span>CLINICALLY PROVEN</span><span class="marquee-dot">&middot;</span>
+        <span>SENSITIVE SKIN SAFE</span><span class="marquee-dot">&middot;</span>
+      </div>
+      <div class="marquee-content" aria-hidden="true">
+        <span>FRAGRANCE-FREE</span><span class="marquee-dot">&middot;</span>
+        <span>DERMATOLOGIST TESTED</span><span class="marquee-dot">&middot;</span>
+        <span>ALCOHOL-FREE</span><span class="marquee-dot">&middot;</span>
+        <span>7-DAY RESULTS</span><span class="marquee-dot">&middot;</span>
+        <span>CLINICALLY PROVEN</span><span class="marquee-dot">&middot;</span>
+        <span>SENSITIVE SKIN SAFE</span><span class="marquee-dot">&middot;</span>
+      </div>
+      <div class="marquee-content" aria-hidden="true">
+        <span>FRAGRANCE-FREE</span><span class="marquee-dot">&middot;</span>
+        <span>DERMATOLOGIST TESTED</span><span class="marquee-dot">&middot;</span>
+        <span>ALCOHOL-FREE</span><span class="marquee-dot">&middot;</span>
+        <span>7-DAY RESULTS</span><span class="marquee-dot">&middot;</span>
+        <span>CLINICALLY PROVEN</span><span class="marquee-dot">&middot;</span>
+        <span>SENSITIVE SKIN SAFE</span><span class="marquee-dot">&middot;</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="section beams-section">
+    <canvas class="beams-canvas"></canvas>
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Our Range</p>
+        <h2>Formulated for Reactive Skin</h2>
+        <p>Every product is built around barrier-first principles — no fragrance, no unnecessary fillers.</p>
+      </div>
+      <div class="products-grid">
+
+        <!-- Vitamin C Serum -->
+        <div class="product-card">
+          <a href="product-vitamin-c-serum.html" class="product-card-img">
+            <img loading="lazy" class="img-front" src="images/vitaminc_front.jpg" alt="Vitamin C Serum" />
+            <img loading="lazy" class="img-back" src="images/vitaminc_back.jpg" alt="Vitamin C Serum — back" />
+          </a>
+          <div class="product-card-body">
+            <div class="rating-row"><span class="stars">★★★★★</span><span class="rating-count">(47)</span></div>
+            <h3>Vitamin C Serum</h3>
+            <p class="desc">A lightweight brightening serum for sensitive skin. Combines 2% Natural Vitamin C with Ferulic Acid and Hyaluronic Acid to even skin tone and boost radiance without irritation.</p>
+            <div class="product-card-footer" style="flex-direction:column;align-items:stretch;gap:8px;">
+              <span class="product-price">€39.99</span>
+              <button class="btn btn-sm btn-primary btn-full add-to-cart-btn" data-id="vitamin-c" data-name="Vitamin C Serum" data-price="39.99" data-image="images/vitaminc_front.jpg" data-variant-id="64098674344285">Add to Cart</button>
+              <a href="product-vitamin-c-serum.html" class="btn btn-sm btn-outline btn-full">View Product</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Moisturising Day Cream -->
+        <div class="product-card">
+          <a href="product-day-cream.html" class="product-card-img">
+            <img loading="lazy" class="img-front" src="images/daycream_front.jpg" alt="Moisturising Day Cream" />
+            <img loading="lazy" class="img-back" src="images/daycream_back.jpg" alt="Moisturising Day Cream — back" />
+          </a>
+          <div class="product-card-body">
+            <div class="rating-row"><span class="stars">★★★★★</span><span class="rating-count">(63)</span></div>
+            <h3>Moisturising Day Cream</h3>
+            <p class="desc">Fast-absorbing daily moisturiser with Hyaluronic Acid and Bisabolol. Hydrates all day without greasiness or clogged pores. Suitable for sensitive skin.</p>
+            <div class="product-card-footer" style="flex-direction:column;align-items:stretch;gap:8px;">
+              <span class="product-price">€29.99</span>
+              <button class="btn btn-sm btn-primary btn-full add-to-cart-btn" data-id="day-cream" data-name="Moisturising Day Cream" data-price="29.99" data-image="images/daycream_front.jpg" data-variant-id="64098656878941">Add to Cart</button>
+              <a href="product-day-cream.html" class="btn btn-sm btn-outline btn-full">View Product</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Facial Wash -->
+        <div class="product-card">
+          <a href="product-facial-wash.html" class="product-card-img">
+            <img loading="lazy" class="img-front" src="images/facialwash_front.jpg" alt="Radiant Glow Facial Wash" />
+            <img loading="lazy" class="img-back" src="images/facialwash_back.jpg" alt="Radiant Glow Facial Wash — back" />
+          </a>
+          <div class="product-card-body">
+            <div class="rating-row"><span class="stars">★★★★☆</span><span class="rating-count">(38)</span></div>
+            <h3>Radiant Glow Facial Wash</h3>
+            <p class="desc">A gentle daily cleanser with Aloe Juice and Glycerin. Removes impurities without stripping the skin barrier.</p>
+            <div class="product-card-footer" style="flex-direction:column;align-items:stretch;gap:8px;">
+              <span class="product-price">€39.99</span>
+              <button class="btn btn-sm btn-primary btn-full add-to-cart-btn" data-id="facial-wash" data-name="Radiant Glow Facial Wash" data-price="39.99" data-image="images/facialwash_front.jpg" data-variant-id="64098578399581">Add to Cart</button>
+              <a href="product-facial-wash.html" class="btn btn-sm btn-outline btn-full">View Product</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Retinol Alternative -->
+        <div class="product-card">
+          <a href="product-retinol-moisturiser.html" class="product-card-img">
+            <img loading="lazy" class="img-front" src="images/retinol_front.jpg" alt="Retinol Alternative Moisturiser" />
+            <img loading="lazy" class="img-back" src="images/retinol_back.jpg" alt="Retinol Alternative Moisturiser — back" />
+          </a>
+          <div class="product-card-body">
+            <div class="rating-row"><span class="stars">★★★★★</span><span class="rating-count">(29)</span></div>
+            <h3>Retinol Alternative Moisturiser</h3>
+            <p class="desc">Powered by Bidens Pilosa, a natural retinol alternative. Reduces fine lines without the irritation or peeling of traditional retinol.</p>
+            <div class="product-card-footer" style="flex-direction:column;align-items:stretch;gap:8px;">
+              <span class="product-price">€34.99</span>
+              <button class="btn btn-sm btn-primary btn-full add-to-cart-btn" data-id="retinol" data-name="Retinol Alternative Moisturiser" data-price="34.99" data-image="images/retinol_front.jpg" data-variant-id="64098507948381">Add to Cart</button>
+              <a href="product-retinol-moisturiser.html" class="btn btn-sm btn-outline btn-full">View Product</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND STORY -->
+  <section class="section">
+    <div class="container about-grid">
+      <div class="about-visual">
+        <div class="about-stats">
+          <div class="stat-block">
+            <div class="stat-number">4</div>
+            <div class="stat-line"></div>
+            <div class="stat-label">Core Products</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number">0</div>
+            <div class="stat-line"></div>
+            <div class="stat-label">Fragrances Added</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number">7</div>
+            <div class="stat-line"></div>
+            <div class="stat-label">Days to Results</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number">100%</div>
+            <div class="stat-line"></div>
+            <div class="stat-label">Derm Tested</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content">
+        <p class="section-label">Our Story</p>
+        <h2>Built for skin that reacts to everything.</h2>
+        <p>We started BarrierLab because we were frustrated. Frustrated by products full of fragrance, unnecessary fillers, and marketing claims with no science behind them — products that looked nice but wrecked sensitive skin.</p>
+        <p>So we built the opposite: a small, focused range of formulas that put barrier health first. Every ingredient earns its place. Every product is tested for real results on reactive skin.</p>
+        <div class="about-points">
+          <div class="about-point">
+            <div class="about-point-icon">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            No fragrance — ever. Not natural, not synthetic.
+          </div>
+          <div class="about-point">
+            <div class="about-point-icon">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            Every formula reviewed by independent dermatologists.
+          </div>
+          <div class="about-point">
+            <div class="about-point-icon">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            Simple routines — cleanse, treat, moisturise. That's it.
+          </div>
+        </div>
+        <a href="about.html" class="btn btn-primary mt-6">Read Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section section-tinted">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">The Routine</p>
+        <h2>Simple. Consistent. Effective.</h2>
+        <p>Barrier health isn't about doing more — it's about doing the right things, consistently.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Cleanse Gently</h3>
+          <p>Start with our low-pH Radiant Glow Facial Wash to remove impurities without disrupting the skin's natural acid mantle.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Treat with Actives</h3>
+          <p>Apply the Vitamin C Serum to damp skin for antioxidant protection, brightening, and ceramide replenishment.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Seal & Protect</h3>
+          <p>Lock everything in with the Day Cream or Retinol Alternative Moisturiser — depending on your skin's needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section section-navy">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Real Results</p>
+        <h2>Customers Who Made the Switch</h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-header">
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="reviewer-name">Sarah M.</div>
+
+            </div>
+            <div class="verified-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </div>
+          </div>
+          <p class="review-text">"I've tried every sensitive skin brand out there. BarrierLab is the first thing that's actually calmed my rosacea down. The Day Cream doesn't sting, doesn't break me out, and my skin looks noticeably better after two weeks."</p>
+          <p class="review-product-tag">Moisturising Day Cream</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="reviewer-name">James K.</div>
+
+            </div>
+            <div class="verified-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </div>
+          </div>
+          <p class="review-text">"Finally a Vitamin C serum that doesn't make my skin freak out. I've been using it for six weeks and the pigmentation from old breakouts has faded significantly. Clean formula, no burning, no redness."</p>
+          <p class="review-product-tag">Vitamin C Serum</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="reviewer-name">Aoife R.</div>
+
+            </div>
+            <div class="verified-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </div>
+          </div>
+          <p class="review-text">"The Retinol Alternative is incredible. I can never use real retinol — my skin just can't handle it — but the bakuchiol formula gives me the same results. My fine lines are visibly reduced and my skin feels smoother than it has in years."</p>
+          <p class="review-product-tag">Retinol Alternative Moisturiser</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-brand-text">BarrierLab</span>
+          <p>Dermatologically advanced skincare for sensitive and reactive skin. No fragrance. No compromise.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="product-vitamin-c-serum.html">Vitamin C Serum</a>
+          <a href="product-day-cream.html">Day Cream</a>
+          <a href="product-facial-wash.html">Facial Wash</a>
+          <a href="product-retinol-moisturiser.html">Retinol Alternative</a>
+        </div>
+        <div class="footer-col">
+          <h4>Info</h4>
+          <a href="about.html">About Us</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Policies</h4>
+          <a href="https://barrierlab.co/policies/shipping-policy" target="_blank" rel="noopener">Shipping & Returns</a>
+          <a href="https://barrierlab.co/policies/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="https://barrierlab.co/policies/terms-of-service" target="_blank" rel="noopener">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 BarrierLab. All rights reserved.</span>
+        <span>Made for sensitive skin everywhere.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- EMAIL POPUP -->
+  <div class="popup-overlay" style="position:fixed;inset:0;background:rgba(10,20,40,0.6);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px;">
+    <div class="popup" style="background:white;border-radius:16px;max-width:440px;width:100%;padding:40px 32px 32px;position:relative;box-shadow:0 24px 60px rgba(0,0,0,0.3);">
+      <button class="popup-close" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:1.8rem;color:var(--gray-500,#888);cursor:pointer;line-height:1;padding:4px 8px;">×</button>
+      <div class="popup-body" style="text-align:center;">
+        <h2 style="color:var(--navy);font-size:1.6rem;margin-bottom:12px;line-height:1.2;">Get 15% off your first order</h2>
+        <p style="color:var(--gray-600,#666);font-size:0.92rem;line-height:1.5;margin-bottom:24px;">Join the BarrierLab community and get an exclusive discount on your first purchase.</p>
+        <form class="popup-form">
+          <input type="email" placeholder="Enter your email" required style="width:100%;padding:13px 16px;border:1px solid var(--gray-300,#ddd);border-radius:10px;font-size:0.95rem;margin-bottom:12px;font-family:inherit;" />
+          <button type="submit" class="btn btn-primary btn-full" style="padding:14px;font-size:0.95rem;">Get My 15% Off</button>
+        </form>
+        <p style="font-size:0.75rem;color:var(--gray-500,#888);margin-top:14px;">No spam, unsubscribe anytime</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay"></div>
+  <div class="cart-sidebar">
+    <div class="cart-sidebar-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close">×</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-discount-note" style="display:none;">✓ Code WELCOME15 applied — 15% off!</div>
+      <div class="cart-total"><span>Total</span><span>€0.00</span></div>
+      <button class="btn btn-primary btn-full checkout-btn">Proceed to Checkout</button>
+      <button class="btn btn-outline btn-full mt-4" onclick="closeCart(); window.location.href='products.html'">Continue Shopping</button>
+    </div>
+  </div>
+
+  <script src="js/beams.js" defer></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
