@@ -397,5 +397,71 @@ document.addEventListener('DOMContentLoaded', () => {
   initNewsletter();
   initCheckout();
   initBundleButton();
+  initSocialProof();
   setTimeout(initScrollAnimations, 100);
 });
+
+// ===== SOCIAL PROOF NOTIFICATIONS =====
+function initSocialProof() {
+  const el = document.querySelector('.social-proof');
+  if (!el) return;
+
+  const notifications = [
+    { name: 'Sarah',  city: 'London',      product: 'Vitamin C Serum',          emoji: '⭐', img: 'images/vitaminc_front.jpg' },
+    { name: 'Emma',   city: 'Copenhagen',  product: 'the Bundle',               emoji: '🛒', img: 'images/hero_product.png'  },
+    { name: 'Mia',    city: 'Amsterdam',   product: 'Day Cream',                emoji: '✨', img: 'images/daycream_front.jpg' },
+    { name: 'Julia',  city: 'Stockholm',   product: 'Retinol Alternative',      emoji: '🌿', img: 'images/retinol_front.jpg'  },
+    { name: 'Anna',   city: 'Berlin',      product: 'Vitamin C Serum',          emoji: '⭐', img: 'images/vitaminc_front.jpg' },
+    { name: 'Sophie', city: 'Paris',       product: 'the Bundle',               emoji: '🛒', img: 'images/hero_product.png'  },
+  ];
+
+  const imgEl      = el.querySelector('.social-proof-img img');
+  const nameEl     = el.querySelector('.sp-name');
+  const cityEl     = el.querySelector('.sp-city');
+  const productEl  = el.querySelector('.sp-product');
+  const emojiEl    = el.querySelector('.sp-emoji');
+  const closeBtn   = el.querySelector('.social-proof-close');
+
+  let index = 0;
+  let visibleTimer = null;
+  let gapTimer = null;
+  let dismissed = false;
+
+  function render(n) {
+    imgEl.src       = n.img;
+    imgEl.alt       = n.product;
+    nameEl.textContent    = n.name;
+    cityEl.textContent    = n.city;
+    productEl.textContent = n.product;
+    emojiEl.textContent   = n.emoji;
+  }
+
+  function showNext() {
+    if (dismissed) return;
+    render(notifications[index]);
+    index = (index + 1) % notifications.length;
+    // Next frame so the transition runs
+    requestAnimationFrame(() => {
+      el.classList.add('visible');
+      el.setAttribute('aria-hidden', 'false');
+    });
+    visibleTimer = setTimeout(hideCurrent, 4200);
+  }
+
+  function hideCurrent() {
+    el.classList.remove('visible');
+    el.setAttribute('aria-hidden', 'true');
+    gapTimer = setTimeout(showNext, 800);
+  }
+
+  closeBtn.addEventListener('click', () => {
+    dismissed = true;
+    clearTimeout(visibleTimer);
+    clearTimeout(gapTimer);
+    el.classList.remove('visible');
+    el.setAttribute('aria-hidden', 'true');
+  });
+
+  // Start cycle after 8 seconds on page
+  setTimeout(showNext, 8000);
+}
