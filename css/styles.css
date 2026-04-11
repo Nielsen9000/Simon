@@ -1416,8 +1416,8 @@ p { color: var(--gray-600); line-height: 1.7; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
-  max-width: 920px;
+  gap: 22px;
+  max-width: 1080px;
   width: 100%;
   margin: 0 auto 56px;
   box-sizing: border-box;
@@ -1433,13 +1433,13 @@ p { color: var(--gray-600); line-height: 1.7; }
 .bundle-product-img {
   display: block;
   width: 100%;
-  max-width: 180px;
+  max-width: 240px;
   aspect-ratio: 1 / 1;
   background: #ffffff;
   border: 1px solid #EFE9DE;
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   box-sizing: border-box;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
@@ -1457,7 +1457,7 @@ p { color: var(--gray-600); line-height: 1.7; }
   box-sizing: border-box;
 }
 .bundle-product-name {
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: var(--navy);
   line-height: 1.45;
@@ -1465,11 +1465,11 @@ p { color: var(--gray-600); line-height: 1.7; }
 }
 .bundle-plus {
   flex: 0 0 auto;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 300;
   color: #B8AE9C;
   line-height: 1;
-  padding-bottom: 32px;
+  padding-bottom: 38px;
   user-select: none;
 }
 .bundle-pricing {
