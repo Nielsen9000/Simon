@@ -4,7 +4,7 @@
 const BUNDLE_PRODUCTS = [
   { id: 'facial-wash', name: 'Radiant Glow Facial Wash', price: 29.99, image: 'images/facialwash_front.jpg', variantId: '64098578399581' },
   { id: 'vitamin-c',   name: 'Vitamin C Serum',          price: 29.99, image: 'images/vitaminc_front.jpg',   variantId: '64098674344285' },
-  { id: 'day-cream',   name: 'Moisturising Day Cream',   price: 24.99, image: 'images/daycream_front.jpg',   variantId: '64098656878941' },
+  { id: 'day-cream',   name: 'Moisturising Day Cream',   price: 24.99, image: 'images/daycream_front.jpg',   variantId: '64149809070429' },
   { id: 'retinol',     name: 'Retinol Alternative Moisturiser', price: 27.99, image: 'images/retinol_front.jpg', variantId: '64098507948381' },
 ];
 const BUNDLE_DISCOUNT_CODE = 'BUNDLE23';
