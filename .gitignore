@@ -4,3 +4,4 @@ credentials.json
 token.json
 *.png.bak
 .claude/
+images/_original/
