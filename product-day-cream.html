@@ -25,6 +25,13 @@
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '1483044433377313');
   fbq('track', 'PageView');
+  fbq('track', 'ViewContent', {
+    content_ids: ['64149809070429'],
+    content_name: 'Moisturising Day Cream',
+    content_type: 'product',
+    value: 24.99,
+    currency: 'EUR'
+  });
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=1483044433377313&ev=PageView&noscript=1"
@@ -210,6 +217,6 @@
     <button class="sticky-atc-btn add-to-cart-btn" type="button" data-id="day-cream" data-name="Moisturising Day Cream" data-price="24.99" data-image="images/daycream_front.jpg" data-variant-id="64149809070429">Add to Cart</button>
   </div>
 
-  <script src="js/main.js?v=10" defer></script>
+  <script src="js/main.js?v=11" defer></script>
 </body>
 </html>

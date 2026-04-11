@@ -58,6 +58,17 @@ function addToCart(id, name, price, image, variantId) {
   updateCartUI();
   showToast(`"${name}" added to cart`);
   openCart();
+
+  // Meta Pixel — AddToCart event
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'AddToCart', {
+      content_ids: [variantId || id],
+      content_name: name,
+      content_type: 'product',
+      value: price,
+      currency: 'EUR'
+    });
+  }
 }
 
 function removeFromCart(id) {
@@ -345,6 +356,22 @@ function initCheckout() {
       showToast('Unable to checkout — missing variant info');
       return;
     }
+
+    // Meta Pixel — InitiateCheckout event
+    if (typeof fbq !== 'undefined') {
+      const isBundle = bundleActive();
+      const rawTotal = getCartTotal();
+      const effectiveTotal = isBundle ? Math.max(0, rawTotal - BUNDLE_SAVINGS) : rawTotal;
+      fbq('track', 'InitiateCheckout', {
+        content_ids: cart.map(i => i.variantId || i.id),
+        contents: cart.map(i => ({ id: i.variantId || i.id, quantity: i.qty, item_price: i.price })),
+        content_type: 'product',
+        num_items: cart.reduce((sum, i) => sum + i.qty, 0),
+        value: effectiveTotal,
+        currency: 'EUR'
+      });
+    }
+
     let url = `https://barrierlab.co/cart/${parts.join(',')}`;
     if (bundleActive()) {
       url += `?discount=${BUNDLE_DISCOUNT_CODE}`;
