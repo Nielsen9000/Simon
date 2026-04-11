@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vitamin C Serum — BarrierLab</title>
-  <link rel="stylesheet" href="css/styles.css?v=9" />
+  <link rel="stylesheet" href="css/styles.css?v=12" />
 </head>
 <body>
 
@@ -53,14 +53,8 @@
         </div>
 
         <div class="product-info">
-          <div style="display:flex;gap:8px;margin-bottom:12px;">
-            <span style="background:var(--navy);color:white;font-size:0.7rem;font-weight:700;padding:4px 10px;border-radius:100px;letter-spacing:0.05em;">BESTSELLER</span>
-          </div>
           <h1>Vitamin C Serum</h1>
-          <div class="rating-row" style="margin-bottom:20px;">
-            <span class="stars" style="font-size:1rem;">★★★★★</span>
-            <span class="rating-count">4.9 (47 reviews)</span>
-          </div>
+          <p class="product-size">30 ml &middot; 1.0 fl oz</p>
           <div class="product-price-lg"><span class="price-old">€39.99</span><span class="price-new">€29.99</span><span class="price-save">Save €10</span></div>
 
           <p class="product-description">A lightweight brightening serum for sensitive skin that wants results without the burn. Combines 2% Natural Vitamin C with Ferulic Acid, Hyaluronic Acid, and Sea-Buckthorn to visibly even skin tone, boost radiance, and protect against daily environmental stress.</p>
@@ -101,41 +95,6 @@
 
       <div class="divider"></div>
 
-
-      <!-- Reviews -->
-      <div style="max-width:900px;margin:0 auto;">
-        <div class="section-header" style="text-align:left;margin-bottom:32px;">
-          <h3>Customer Reviews</h3>
-          <div class="rating-row" style="margin-top:8px;">
-            <span class="stars" style="font-size:1.1rem;">★★★★★</span>
-            <span style="font-size:0.9rem;color:var(--navy);font-weight:700;">4.9</span>
-            <span class="rating-count">from 47 verified reviews</span>
-          </div>
-        </div>
-        <div class="reviews-grid">
-          <div class="review-card">
-            <div class="review-header">
-              <div><div class="stars">★★★★★</div><div class="reviewer-name">James K.</div><div class="reviewer-date">February 2025</div></div>
-              <div class="verified-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Verified</div>
-            </div>
-            <p class="review-text">"Finally a Vitamin C serum that doesn't irritate my reactive skin. I've been using it for six weeks and the pigmentation from old breakouts has noticeably faded. No stinging, no redness — just results."</p>
-          </div>
-          <div class="review-card">
-            <div class="review-header">
-              <div><div class="stars">★★★★★</div><div class="reviewer-name">Maria L.</div><div class="reviewer-date">January 2025</div></div>
-              <div class="verified-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Verified</div>
-            </div>
-            <p class="review-text">"I have extremely sensitive skin and have reacted to every Vitamin C product I've tried. This is the first one I can actually use daily. My skin looks brighter and more even. Incredible formula."</p>
-          </div>
-          <div class="review-card">
-            <div class="review-header">
-              <div><div class="stars">★★★★☆</div><div class="reviewer-name">Tom B.</div><div class="reviewer-date">December 2024</div></div>
-              <div class="verified-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Verified</div>
-            </div>
-            <p class="review-text">"Good serum, light texture, absorbs quickly. Takes about 3–4 weeks to see visible changes but my skin tone is definitely more even. Good value compared to similar products."</p>
-          </div>
-        </div>
-      </div>
 
     </div>
   </section>
@@ -221,6 +180,18 @@
     </div>
   </div>
 
-  <script src="js/main.js?v=6">
+  <!-- STICKY MOBILE ADD TO CART -->
+  <div class="sticky-atc" aria-hidden="true">
+    <div class="sticky-atc-info">
+      <img src="images/vitaminc_front.jpg" alt="" class="sticky-atc-img" loading="lazy" />
+      <div class="sticky-atc-text">
+        <div class="sticky-atc-name">Vitamin C Serum</div>
+        <div class="sticky-atc-price"><span class="sticky-atc-old">&euro;39.99</span>&euro;29.99</div>
+      </div>
+    </div>
+    <button class="sticky-atc-btn add-to-cart-btn" type="button" data-id="vitamin-c" data-name="Vitamin C Serum" data-price="29.99" data-image="images/vitaminc_front.jpg" data-variant-id="64098674344285">Add to Cart</button>
+  </div>
+
+  <script src="js/main.js?v=9"></script>
 </body>
 </html>

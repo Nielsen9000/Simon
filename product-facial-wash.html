@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Radiant Glow Facial Wash — BarrierLab</title>
-  <link rel="stylesheet" href="css/styles.css?v=9" />
+  <link rel="stylesheet" href="css/styles.css?v=12" />
 </head>
 <body>
 
@@ -54,10 +54,7 @@
 
         <div class="product-info">
           <h1>Radiant Glow Facial Wash</h1>
-          <div class="rating-row" style="margin-bottom:20px;">
-            <span class="stars" style="font-size:1rem;">★★★★☆</span>
-            <span class="rating-count">4.7 (38 reviews)</span>
-          </div>
+          <p class="product-size">150 ml &middot; 5.1 fl oz</p>
           <div class="product-price-lg"><span class="price-old">€39.99</span><span class="price-new">€29.99</span><span class="price-save">Save €10</span></div>
 
           <p class="product-description">A gentle daily cleanser that removes impurities without disrupting your skin barrier. Formulated with Aloe Juice, Blackberry Fruit Extract, and Glycerin to cleanse effectively while keeping skin hydrated, calm, and comfortable.</p>
@@ -105,39 +102,6 @@
         </div>
       </div>
 
-      <div style="max-width:900px;margin:0 auto;">
-        <div style="margin-bottom:32px;">
-          <h3>Customer Reviews</h3>
-          <div class="rating-row" style="margin-top:8px;">
-            <span class="stars" style="font-size:1.1rem;">★★★★☆</span>
-            <span style="font-size:0.9rem;color:var(--navy);font-weight:700;">4.7</span>
-            <span class="rating-count">from 38 verified reviews</span>
-          </div>
-        </div>
-        <div class="reviews-grid">
-          <div class="review-card">
-            <div class="review-header">
-              <div><div class="stars">★★★★★</div><div class="reviewer-name">Emma T.</div><div class="reviewer-date">March 2025</div></div>
-              <div class="verified-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Verified</div>
-            </div>
-            <p class="review-text">"Finally a cleanser that doesn't leave my skin tight. I have dry, sensitive skin and every cleanser I've tried stripped it completely. This one is genuinely gentle — skin feels clean but comfortable right after washing."</p>
-          </div>
-          <div class="review-card">
-            <div class="review-header">
-              <div><div class="stars">★★★★★</div><div class="reviewer-name">Luke F.</div><div class="reviewer-date">January 2025</div></div>
-              <div class="verified-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Verified</div>
-            </div>
-            <p class="review-text">"Low pH cleansers are hard to find at this price. This works brilliantly as a first cleanse. Removes everything without any irritation. My skin is noticeably less reactive since I switched to this."</p>
-          </div>
-          <div class="review-card">
-            <div class="review-header">
-              <div><div class="stars">★★★★☆</div><div class="reviewer-name">Siobhan K.</div><div class="reviewer-date">December 2024</div></div>
-              <div class="verified-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Verified</div>
-            </div>
-            <p class="review-text">"Good cleanser, doesn't foam much which I wasn't expecting but makes sense for a gentle formula. Gets everything off and my skin feels soft. Four stars because I'd love a slightly bigger size."</p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -218,6 +182,18 @@
       <button class="btn btn-outline btn-full mt-4" onclick="closeCart()">Continue Shopping</button>
     </div>
   </div>
-  <script src="js/main.js?v=6">
+  <!-- STICKY MOBILE ADD TO CART -->
+  <div class="sticky-atc" aria-hidden="true">
+    <div class="sticky-atc-info">
+      <img src="images/facialwash_front.jpg" alt="" class="sticky-atc-img" loading="lazy" />
+      <div class="sticky-atc-text">
+        <div class="sticky-atc-name">Radiant Glow Facial Wash</div>
+        <div class="sticky-atc-price"><span class="sticky-atc-old">&euro;39.99</span>&euro;29.99</div>
+      </div>
+    </div>
+    <button class="sticky-atc-btn add-to-cart-btn" type="button" data-id="facial-wash" data-name="Radiant Glow Facial Wash" data-price="29.99" data-image="images/facialwash_front.jpg" data-variant-id="64098578399581">Add to Cart</button>
+  </div>
+
+  <script src="js/main.js?v=9"></script>
 </body>
 </html>

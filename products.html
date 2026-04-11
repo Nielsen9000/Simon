@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shop — BarrierLab Skincare</title>
-  <meta name="description" content="Browse the full BarrierLab range. Science-backed skincare for sensitive and reactive skin." />
-  <link rel="stylesheet" href="css/styles.css?v=9" />
+  <meta name="description" content="Browse the full BarrierLab range. Science-led skincare for sensitive and reactive skin. Fragrance-free. Dermatologist-tested. Barrier-first." />
+  <link rel="stylesheet" href="css/styles.css?v=12" />
 </head>
 <body>
 
@@ -53,15 +53,10 @@
     <canvas class="beams-canvas"></canvas>
     <div class="container">
 
-      <!-- Filter bar -->
+      <!-- Count bar -->
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:12px;">
-        <p style="font-size:0.88rem;color:var(--text-muted);">Showing <strong style="color:var(--navy)">4 products</strong></p>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          <button class="btn btn-sm btn-primary">All</button>
-          <button class="btn btn-sm btn-outline">Serums</button>
-          <button class="btn btn-sm btn-outline">Moisturisers</button>
-          <button class="btn btn-sm btn-outline">Cleansers</button>
-        </div>
+        <p style="font-size:0.88rem;color:var(--text-muted);">Showing <strong style="color:var(--navy)">4 products</strong> &mdash; the full range</p>
+        <a href="index.html#bundle" style="font-size:0.82rem;font-weight:600;color:var(--navy);text-decoration:none;display:inline-flex;align-items:center;gap:6px;">Save 20% with the Complete Bundle &rarr;</a>
       </div>
 
       <div class="products-grid" id="shop">
@@ -71,10 +66,8 @@
             <span class="sale-badge">Sale</span>
             <img loading="lazy" class="img-front" src="images/vitaminc_front.jpg" alt="Vitamin C Serum" />
             <img loading="lazy" class="img-back" src="images/vitaminc_back.jpg" alt="Vitamin C Serum — back" />
-            <span class="product-badge-tag">Bestseller</span>
           </a>
           <div class="product-card-body">
-            <div class="rating-row"><span class="stars">★★★★★</span><span class="rating-count">(47)</span></div>
             <h3>Vitamin C Serum</h3>
             <p class="desc">A lightweight brightening serum for sensitive skin. 2% Natural Vitamin C with Ferulic Acid and Hyaluronic Acid to even skin tone and boost radiance without irritation.</p>
             <div class="product-card-footer" style="flex-direction:column;align-items:stretch;gap:8px;">
@@ -92,7 +85,6 @@
             <img loading="lazy" class="img-back" src="images/daycream_back.jpg" alt="Moisturising Day Cream — back" />
           </a>
           <div class="product-card-body">
-            <div class="rating-row"><span class="stars">★★★★★</span><span class="rating-count">(63)</span></div>
             <h3>Moisturising Day Cream</h3>
             <p class="desc">Fast-absorbing daily moisturiser with Hyaluronic Acid and Bisabolol. Hydrates all day without greasiness. Suitable for sensitive skin.</p>
             <div class="product-card-footer" style="flex-direction:column;align-items:stretch;gap:8px;">
@@ -110,7 +102,6 @@
             <img loading="lazy" class="img-back" src="images/facialwash_back.jpg" alt="Radiant Glow Facial Wash — back" />
           </a>
           <div class="product-card-body">
-            <div class="rating-row"><span class="stars">★★★★☆</span><span class="rating-count">(38)</span></div>
             <h3>Radiant Glow Facial Wash</h3>
             <p class="desc">A gentle daily cleanser with Aloe Juice and Glycerin. Removes impurities without stripping the skin barrier.</p>
             <div class="product-card-footer" style="flex-direction:column;align-items:stretch;gap:8px;">
@@ -129,7 +120,6 @@
             <span class="product-badge-tag">New</span>
           </a>
           <div class="product-card-body">
-            <div class="rating-row"><span class="stars">★★★★★</span><span class="rating-count">(29)</span></div>
             <h3>Retinol Alternative Moisturiser</h3>
             <p class="desc">Powered by Bidens Pilosa, a natural retinol alternative. Reduces fine lines without the irritation of traditional retinol.</p>
             <div class="product-card-footer" style="flex-direction:column;align-items:stretch;gap:8px;">
@@ -147,10 +137,10 @@
   <!-- Bundle CTA -->
   <section class="section bg-off-white">
     <div class="container text-center">
-      <p class="section-label">Complete Routine</p>
-      <h2>Try the Full Barrier Routine</h2>
-      <p style="max-width:480px;margin:12px auto 28px;">Get all 4 products and build the complete sensitive skin routine. Use code WELCOME15 for 15% off your first order.</p>
-      <a href="#shop" class="btn btn-primary btn-lg">Shop the Bundle</a>
+      <p class="section-label">Best Value</p>
+      <h2>Get the Full Routine &mdash; Save 20%</h2>
+      <p style="max-width:520px;margin:12px auto 28px;">All four core products in one bundle: cleanse, treat, hydrate, protect. &euro;89.99 instead of &euro;112.96 &mdash; your complete barrier-first routine in one click.</p>
+      <a href="index.html#bundle" class="btn btn-primary btn-lg">View the Bundle &rarr;</a>
     </div>
   </section>
 
@@ -201,6 +191,6 @@
   </div>
 
   <script src="js/beams.js" defer></script>
-  <script src="js/main.js?v=6">
+  <script src="js/main.js?v=9"></script>
 </body>
 </html>

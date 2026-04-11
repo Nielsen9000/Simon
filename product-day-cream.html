@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Moisturising Day Cream — BarrierLab</title>
-  <link rel="stylesheet" href="css/styles.css?v=9" />
+  <link rel="stylesheet" href="css/styles.css?v=12" />
 </head>
 <body>
 
@@ -54,10 +54,7 @@
 
         <div class="product-info">
           <h1>Moisturising Day Cream</h1>
-          <div class="rating-row" style="margin-bottom:20px;">
-            <span class="stars" style="font-size:1rem;">★★★★★</span>
-            <span class="rating-count">4.9 (63 reviews)</span>
-          </div>
+          <p class="product-size">50 ml &middot; 1.7 fl oz</p>
           <div class="product-price-lg"><span class="price-old">€29.99</span><span class="price-new">€24.99</span><span class="price-save">Save €5</span></div>
 
           <p class="product-description">Fast-absorbing daily moisturiser that delivers deep lasting hydration without heaviness. Formulated with multi-molecular-weight Hyaluronic Acid and Bisabolol to hydrate all day and calm redness. Antioxidant-rich Rowanberry Extract protects against environmental damage.</p>
@@ -96,42 +93,6 @@
         </div>
       </div>
 
-      <div class="divider"></div>
-
-
-      <div style="max-width:900px;margin:0 auto;">
-        <div style="margin-bottom:32px;">
-          <h3>Customer Reviews</h3>
-          <div class="rating-row" style="margin-top:8px;">
-            <span class="stars" style="font-size:1.1rem;">★★★★★</span>
-            <span style="font-size:0.9rem;color:var(--navy);font-weight:700;">4.9</span>
-            <span class="rating-count">from 63 verified reviews</span>
-          </div>
-        </div>
-        <div class="reviews-grid">
-          <div class="review-card">
-            <div class="review-header">
-              <div><div class="stars">★★★★★</div><div class="reviewer-name">Sarah M.</div><div class="reviewer-date">March 2025</div></div>
-              <div class="verified-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Verified</div>
-            </div>
-            <p class="review-text">"I've tried every sensitive skin moisturiser on the market. This is the first one that's actually calmed my rosacea down. Doesn't sting, doesn't break me out, and my skin looks noticeably better after two weeks."</p>
-          </div>
-          <div class="review-card">
-            <div class="review-header">
-              <div><div class="stars">★★★★★</div><div class="reviewer-name">Claire D.</div><div class="reviewer-date">February 2025</div></div>
-              <div class="verified-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Verified</div>
-            </div>
-            <p class="review-text">"Lightweight, hydrating, and no fragrance. I wear it under SPF every morning. My skin feels plumped and comfortable all day — even in dry office air. Already on my third jar."</p>
-          </div>
-          <div class="review-card">
-            <div class="review-header">
-              <div><div class="stars">★★★★★</div><div class="reviewer-name">Niamh O.</div><div class="reviewer-date">January 2025</div></div>
-              <div class="verified-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Verified</div>
-            </div>
-            <p class="review-text">"My dermatologist recommended ceramide moisturisers and this one is excellent. It's the best value I've found and the formula is as clean as anything twice the price. Would absolutely recommend."</p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -212,6 +173,18 @@
       <button class="btn btn-outline btn-full mt-4" onclick="closeCart()">Continue Shopping</button>
     </div>
   </div>
-  <script src="js/main.js?v=6">
+  <!-- STICKY MOBILE ADD TO CART -->
+  <div class="sticky-atc" aria-hidden="true">
+    <div class="sticky-atc-info">
+      <img src="images/daycream_front.jpg" alt="" class="sticky-atc-img" loading="lazy" />
+      <div class="sticky-atc-text">
+        <div class="sticky-atc-name">Moisturising Day Cream</div>
+        <div class="sticky-atc-price"><span class="sticky-atc-old">&euro;29.99</span>&euro;24.99</div>
+      </div>
+    </div>
+    <button class="sticky-atc-btn add-to-cart-btn" type="button" data-id="day-cream" data-name="Moisturising Day Cream" data-price="24.99" data-image="images/daycream_front.jpg" data-variant-id="64098656878941">Add to Cart</button>
+  </div>
+
+  <script src="js/main.js?v=9"></script>
 </body>
 </html>

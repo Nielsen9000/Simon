@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Retinol Alternative Moisturiser — BarrierLab</title>
-  <link rel="stylesheet" href="css/styles.css?v=9" />
+  <link rel="stylesheet" href="css/styles.css?v=12" />
 </head>
 <body>
 
@@ -57,10 +57,7 @@
             <span style="background:var(--navy);color:white;font-size:0.7rem;font-weight:700;padding:4px 10px;border-radius:100px;letter-spacing:0.05em;">NEW</span>
           </div>
           <h1>Retinol Alternative Moisturiser</h1>
-          <div class="rating-row" style="margin-bottom:20px;">
-            <span class="stars" style="font-size:1rem;">★★★★★</span>
-            <span class="rating-count">4.9 (29 reviews)</span>
-          </div>
+          <p class="product-size">50 ml &middot; 1.7 fl oz</p>
           <div class="product-price-lg"><span class="price-old">€34.99</span><span class="price-new">€27.99</span><span class="price-save">Save €7</span></div>
 
           <p class="product-description">All the anti-ageing benefits of retinol without the irritation, peeling, or sensitivity. Powered by Bidens Pilosa extract, a clinically studied natural retinol alternative that reduces fine lines and wrinkles while keeping skin calm and comfortable.</p>
@@ -115,39 +112,6 @@
         </div>
       </div>
 
-      <div style="max-width:900px;margin:0 auto;">
-        <div style="margin-bottom:32px;">
-          <h3>Customer Reviews</h3>
-          <div class="rating-row" style="margin-top:8px;">
-            <span class="stars" style="font-size:1.1rem;">★★★★★</span>
-            <span style="font-size:0.9rem;color:var(--navy);font-weight:700;">4.9</span>
-            <span class="rating-count">from 29 verified reviews</span>
-          </div>
-        </div>
-        <div class="reviews-grid">
-          <div class="review-card">
-            <div class="review-header">
-              <div><div class="stars">★★★★★</div><div class="reviewer-name">Aoife R.</div><div class="reviewer-date">January 2025</div></div>
-              <div class="verified-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Verified</div>
-            </div>
-            <p class="review-text">"I can never use real retinol — my skin just can't handle it. The bakuchiol formula gives me the same results without any of the irritation. My fine lines are visibly reduced and my skin feels smoother than it has in years."</p>
-          </div>
-          <div class="review-card">
-            <div class="review-header">
-              <div><div class="stars">★★★★★</div><div class="reviewer-name">Patricia W.</div><div class="reviewer-date">February 2025</div></div>
-              <div class="verified-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Verified</div>
-            </div>
-            <p class="review-text">"I'm 52 and have been searching for an anti-aging product that doesn't irritate my skin. This is genuinely remarkable. Six weeks in — my skin looks more even, firmer, and the lines around my eyes are noticeably softer."</p>
-          </div>
-          <div class="review-card">
-            <div class="review-header">
-              <div><div class="stars">★★★★★</div><div class="reviewer-name">Rachel H.</div><div class="reviewer-date">March 2025</div></div>
-              <div class="verified-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Verified</div>
-            </div>
-            <p class="review-text">"Used this throughout my pregnancy when I had to stop my retinol. Honestly might never go back. Zero irritation, my skin adjusted immediately and I've been using it nightly for four months now."</p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -228,6 +192,18 @@
       <button class="btn btn-outline btn-full mt-4" onclick="closeCart()">Continue Shopping</button>
     </div>
   </div>
-  <script src="js/main.js?v=6">
+  <!-- STICKY MOBILE ADD TO CART -->
+  <div class="sticky-atc" aria-hidden="true">
+    <div class="sticky-atc-info">
+      <img src="images/retinol_front.jpg" alt="" class="sticky-atc-img" loading="lazy" />
+      <div class="sticky-atc-text">
+        <div class="sticky-atc-name">Retinol Alternative</div>
+        <div class="sticky-atc-price"><span class="sticky-atc-old">&euro;34.99</span>&euro;27.99</div>
+      </div>
+    </div>
+    <button class="sticky-atc-btn add-to-cart-btn" type="button" data-id="retinol" data-name="Retinol Alternative Moisturiser" data-price="27.99" data-image="images/retinol_front.jpg" data-variant-id="64098507948381">Add to Cart</button>
+  </div>
+
+  <script src="js/main.js?v=9"></script>
 </body>
 </html>
