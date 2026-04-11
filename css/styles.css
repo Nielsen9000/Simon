@@ -1297,15 +1297,19 @@ p { color: var(--gray-600); line-height: 1.7; }
   grid-template-columns: repeat(2, 1fr);
   gap: 18px;
   max-width: 540px;
+  width: 100%;
   margin: 0 auto 56px;
+  box-sizing: border-box;
 }
 .bundle-product {
   background: rgba(255,255,255,0.035);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 14px;
-  padding: 22px 18px 18px;
+  padding: 20px 16px 16px;
   text-align: center;
   transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  box-sizing: border-box;
+  min-width: 0;
 }
 .bundle-product:hover {
   background: rgba(255,255,255,0.06);
@@ -1313,21 +1317,24 @@ p { color: var(--gray-600); line-height: 1.7; }
   transform: translateY(-2px);
 }
 .bundle-product-img {
+  display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 160px;
   background: rgba(255,255,255,0.94);
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+  box-sizing: border-box;
 }
 .bundle-product-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
   padding: 14px;
+  box-sizing: border-box;
 }
 .bundle-product-name {
   font-size: 0.82rem;
@@ -1418,7 +1425,7 @@ p { color: var(--gray-600); line-height: 1.7; }
   .bundle-subtitle { font-size: 0.9rem; }
   .bundle-products { gap: 12px; max-width: 100%; margin-bottom: 40px; }
   .bundle-product { padding: 14px 12px 12px; border-radius: 12px; }
-  .bundle-product-img { border-radius: 8px; margin-bottom: 12px; }
+  .bundle-product-img { height: 120px; border-radius: 8px; margin-bottom: 12px; }
   .bundle-product-img img { padding: 10px; }
   .bundle-product-name { font-size: 0.72rem; }
   .bundle-price { font-size: 2.5rem; }
