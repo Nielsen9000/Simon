@@ -9,6 +9,7 @@ const BUNDLE_PRODUCTS = [
 ];
 const BUNDLE_DISCOUNT_CODE = 'BUNDLE23';
 const BUNDLE_SAVINGS = 23;
+const SHOPIFY_DOMAIN = 'barrierlab.co';
 
 function bundleActive() {
   if (localStorage.getItem('bl_bundle') !== '1') return false;
@@ -139,7 +140,15 @@ function renderCartItems() {
   }
 }
 
-function addBundleToCart() {
+function addBundleToCart(btn) {
+  // Disable the button while we work so the user can't double-click
+  if (btn) {
+    btn.disabled = true;
+    btn.dataset.originalText = btn.textContent;
+    btn.textContent = 'Adding bundle…';
+  }
+
+  // Keep local cart state in sync so the sidebar/header reflect the bundle
   BUNDLE_PRODUCTS.forEach(p => {
     const existing = cart.find(i => i.id === p.id);
     if (existing) {
@@ -151,8 +160,13 @@ function addBundleToCart() {
   localStorage.setItem('bl_bundle', '1');
   saveCart();
   updateCartUI();
-  showToast(`Bundle added — save €${BUNDLE_SAVINGS} at checkout`);
-  openCart();
+
+  // Build a cart permalink that contains every variant + the discount code,
+  // then redirect straight to checkout. Shopify applies the discount from the
+  // ?discount= query param automatically and adds the items server-side.
+  const permalinkItems = BUNDLE_PRODUCTS.map(p => `${p.variantId}:1`).join(',');
+  const checkoutUrl = `https://${SHOPIFY_DOMAIN}/cart/${permalinkItems}?discount=${BUNDLE_DISCOUNT_CODE}`;
+  window.location.href = checkoutUrl;
 }
 
 // ===== CART SIDEBAR =====
@@ -344,7 +358,7 @@ function initBundleButton() {
   document.querySelectorAll('.add-bundle-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      addBundleToCart();
+      addBundleToCart(btn);
     });
   });
 }
