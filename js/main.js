@@ -1,5 +1,27 @@
 /* ===== BARRIERLAB — MAIN JS ===== */
 
+// ===== BUNDLE CONFIG =====
+const BUNDLE_PRODUCTS = [
+  { id: 'facial-wash', name: 'Radiant Glow Facial Wash', price: 29.99, image: 'images/facialwash_front.jpg', variantId: '64098578399581' },
+  { id: 'vitamin-c',   name: 'Vitamin C Serum',          price: 29.99, image: 'images/vitaminc_front.jpg',   variantId: '64098674344285' },
+  { id: 'day-cream',   name: 'Moisturising Day Cream',   price: 24.99, image: 'images/daycream_front.jpg',   variantId: '64098656878941' },
+  { id: 'retinol',     name: 'Retinol Alternative Moisturiser', price: 27.99, image: 'images/retinol_front.jpg', variantId: '64098507948381' },
+];
+const BUNDLE_DISCOUNT_CODE = 'BUNDLE23';
+const BUNDLE_SAVINGS = 23;
+
+function bundleActive() {
+  if (localStorage.getItem('bl_bundle') !== '1') return false;
+  const ids = new Set(cart.map(i => i.id));
+  const complete = BUNDLE_PRODUCTS.every(p => ids.has(p.id));
+  if (!complete) {
+    // User removed a bundle item — stop applying the bundle discount
+    localStorage.removeItem('bl_bundle');
+    return false;
+  }
+  return true;
+}
+
 // ===== CART STATE =====
 let cart = JSON.parse(localStorage.getItem('bl_cart') || '[]');
 
@@ -63,6 +85,9 @@ function renderCartItems() {
     container.innerHTML = '<div class="cart-empty">Your cart is empty.<br><br><a href="products.html" style="color:var(--navy);font-weight:600;text-decoration:underline;">Browse products →</a></div>';
     const totalEl = document.querySelector('.cart-total span:last-child');
     if (totalEl) totalEl.textContent = '€0.00';
+    localStorage.removeItem('bl_bundle');
+    const bundleNote = document.querySelector('.cart-bundle-note');
+    if (bundleNote) bundleNote.style.display = 'none';
     return;
   }
 
@@ -85,13 +110,49 @@ function renderCartItems() {
   `).join('');
 
   const totalEl = document.querySelector('.cart-total span:last-child');
-  if (totalEl) totalEl.textContent = `€${getCartTotal().toFixed(2)}`;
+  const isBundle = bundleActive();
+  const rawTotal = getCartTotal();
+  const effectiveTotal = isBundle ? Math.max(0, rawTotal - BUNDLE_SAVINGS) : rawTotal;
+  if (totalEl) totalEl.textContent = `€${effectiveTotal.toFixed(2)}`;
 
   // show discount note if they have the code
   const discountNote = document.querySelector('.cart-discount-note');
   if (discountNote && localStorage.getItem('bl_discount')) {
     discountNote.style.display = 'block';
   }
+
+  // bundle savings note — inject dynamically so every page picks it up
+  const footer = document.querySelector('.cart-footer');
+  if (footer) {
+    let bundleNote = footer.querySelector('.cart-bundle-note');
+    if (isBundle) {
+      if (!bundleNote) {
+        bundleNote = document.createElement('div');
+        bundleNote.className = 'cart-bundle-note';
+        footer.insertBefore(bundleNote, footer.firstChild);
+      }
+      bundleNote.innerHTML = `✓ Complete Barrier Ritual Bundle — <strong>Save €${BUNDLE_SAVINGS}</strong> at checkout`;
+      bundleNote.style.display = 'block';
+    } else if (bundleNote) {
+      bundleNote.style.display = 'none';
+    }
+  }
+}
+
+function addBundleToCart() {
+  BUNDLE_PRODUCTS.forEach(p => {
+    const existing = cart.find(i => i.id === p.id);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ id: p.id, name: p.name, price: p.price, image: p.image, variantId: p.variantId, qty: 1 });
+    }
+  });
+  localStorage.setItem('bl_bundle', '1');
+  saveCart();
+  updateCartUI();
+  showToast(`Bundle added — save €${BUNDLE_SAVINGS} at checkout`);
+  openCart();
 }
 
 // ===== CART SIDEBAR =====
@@ -270,7 +331,21 @@ function initCheckout() {
       showToast('Unable to checkout — missing variant info');
       return;
     }
-    window.location.href = `https://barrierlab.co/cart/${parts.join(',')}`;
+    let url = `https://barrierlab.co/cart/${parts.join(',')}`;
+    if (bundleActive()) {
+      url += `?discount=${BUNDLE_DISCOUNT_CODE}`;
+    }
+    window.location.href = url;
+  });
+}
+
+// ===== BUNDLE BUTTON =====
+function initBundleButton() {
+  document.querySelectorAll('.add-bundle-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      addBundleToCart();
+    });
   });
 }
 
@@ -307,5 +382,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initProductQty();
   initNewsletter();
   initCheckout();
+  initBundleButton();
   setTimeout(initScrollAnimations, 100);
 });
